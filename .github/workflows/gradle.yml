@@ -73,7 +73,7 @@ jobs:
           # parameters here, since that would override PR detection.
           # sonar.login supports this repo's older Gradle scanner.
           # Clear the hard-coded admin password from build.gradle.
-          ./gradlew --no-daemon build jacocoTestReport sonarqube \
+          ./gradlew --no-daemon build jacocoTestReport sonar \
             -Dsonar.host.url="$SONAR_HOST_URL" \
             -Dsonar.projectKey="$SONAR_PROJECT_KEY" \
             -Dsonar.organization="$SONAR_ORGANIZATION" \
@@ -81,3 +81,5 @@ jobs:
             -Dsonar.password= \
             -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml \
             -Dsonar.qualitygate.wait=true
+
+
