@@ -30,6 +30,6 @@ jacocoTestReport {
     }
 }
 test.finalizedBy jacocoTestReport
-tasks.named('sonarqube').configure {
-    dependsOn test
+tasks.named('sonar').configure {
+    dependsOn test, jacocoTestReport
 }
